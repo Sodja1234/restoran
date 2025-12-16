@@ -32,5 +32,6 @@
                 {{ $slot }}
             </main>
         </div>
+        <script src="https://unpkg.com/preline@1.x/dist/preline.js"></script>
     </body>
 </html>
