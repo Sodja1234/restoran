@@ -36,7 +36,29 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'category_id' => 'required|exists:categories,id',
+            'name' => 'required|string|max:255|unique:dishes',
+            'price' => 'required|numeric|min:0',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
+
+        $path = null;
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('dishes', 'public');
+        }
+
+        Dish::create([
+            'category_id' => $validated['category_id'],
+            'name' => $validated['name'],
+            'price' => $validated['price'],
+            'description' => $validated['description'],
+            'image_path' => $path,
+            'is_available' => true,
+        ]);
+
+        return redirect()->route('dishes.index')->with('success', 'Le plat a été ajouté avec succès !');
     }
 
     /**
