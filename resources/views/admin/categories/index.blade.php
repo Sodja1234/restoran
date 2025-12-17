@@ -10,8 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
 
                 <div class="mb-4 flex justify-end">
-                    <a href="{{ route('categories.create') }}" 
-                       class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-600 text-white hover:bg-indigo-700">
+                    <a href="{{ route('categories.create') }}"
+                       class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-indigo-600 hover:bg-indigo-700">
                         Ajouter une Catégorie
                     </a>
                 </div>
@@ -35,7 +35,7 @@
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{{ $category->name }}</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ $category->slug }}</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                    <a class="text-indigo-600 hover:text-indigo-900" 
+                                                    <a class="text-indigo-600 hover:text-indigo-900"
                                                        href="{{ route('categories.edit', $category->id) }}">
                                                         Modifier
                                                     </a>
@@ -49,7 +49,7 @@
                                                 </td>
                                             </tr>
                                         @endforelse
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
