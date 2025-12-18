@@ -79,7 +79,7 @@
                 <input type="number" name="guest_count" placeholder="Nombre d'invités" class="border-gray-200 rounded-lg p-3 w-full" required>
                 <textarea name="details" placeholder="Dites-nous en plus (type d'événement, plats souhaités...)" class="border-gray-200 rounded-lg p-3 w-full md:col-span-2" rows="4" required></textarea>
             </div>
-            <button type="submit" class="mt-4 w-full py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition">
+            <button type="submit" class="mt-4 w-full py-3 bg-indigo-600 font-bold rounded-lg hover:bg-indigo-700 transition">
                 Envoyer ma demande
             </button>
         </form>
