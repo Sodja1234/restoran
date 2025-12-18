@@ -30,4 +30,14 @@ class QuoteRequestController extends Controller
         $quotes = QuoteRequest::latest()->paginate(10);
         return view('admin.quotes.index', compact('quotes'));
     }
+    public function updateStatus(Request $request, QuoteRequest $quoteRequest)
+    {
+        $request->validate([
+            'status' => 'required|in:nouveau,confirme,annule,termine'
+        ]);
+
+        $quoteRequest->update(['status' => $request->status]);
+
+        return back()->with('success', 'Le statut du devis a été mis à jour.');
+    }
 }
