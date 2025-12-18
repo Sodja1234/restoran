@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="mt-6 flex justify-end gap-x-2">
-                        <button type="submit" class="py-2 px-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Enregistrer le plat</button>
+                        <button type="submit" class="py-2 px-3 bg-indigo-600 text rounded-lg hover:bg-indigo-700">Enregistrer le plat</button>
                     </div>
                 </form>
 

@@ -7,7 +7,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white p-6 shadow-sm rounded-lg overflow-x-auto">
                 <div class="mb-4 flex justify-end">
-                    <a href="{{ route('dishes.create') }}" class="py-2 px-3 bg-indigo-600 text-white rounded-lg text-sm">Ajouter un Plat</a>
+                    <a href="{{ route('dishes.create') }}" class="py-2 px-3 bg-indigo-600 text rounded-lg text-sm">Ajouter un Plat</a>
                 </div>
 
                 <table class="min-w-full divide-y divide-gray-200">
