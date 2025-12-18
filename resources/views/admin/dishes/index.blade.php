@@ -33,8 +33,13 @@
                             <td class="px-6 py-4 text-sm font-medium text-gray-800">{{ $dish->name }}</td>
                             <td class="px-6 py-4 text-sm text-gray-600">{{ $dish->category->name }}</td>
                             <td class="px-6 py-4 text-sm text-gray-800">{{ number_format($dish->price, 2) }} €</td>
+                            <td class="px-6 py-4 text-sm text-gray-800">{{ number_format($dish->price, 2) }} €</td>
                             <td class="px-6 py-4 text-right text-sm">
-                                <a href="{{ route('dishes.edit', $dish->id) }}" class="text-indigo-600 hover:underline">Modifier</a>
+                                <form action="{{ route('dishes.destroy', $dish->id) }}" method="POST" onsubmit="return confirm('Supprimer ce plat ?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-600 hover:text-red-900 font-medium">Supprimer</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

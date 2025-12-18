@@ -88,8 +88,15 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Dish $dish)
     {
-        //
+        if ($dish->image_path) {
+            Storage::disk('public')->delete($dish->image_path);
+        }
+
+        // 2. Supprimer le plat de la base de données
+        $dish->delete();
+
+        return redirect()->route('dishes.index')->with('success', 'Le plat a été supprimé définitivement.');
     }
 }
