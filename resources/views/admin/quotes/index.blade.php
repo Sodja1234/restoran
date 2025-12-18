@@ -31,7 +31,8 @@
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right text-sm">
-                                <button class="text-indigo-600 hover:text-indigo-900">Voir détails</button>
+                                <a href="{{ route('admin.quotes.show', $quote->id) }}"
+                                     class="text-indigo-600 hover:text-indigo-900">Voir détails</a>
                             </td>
                         </tr>
                         @endforeach
