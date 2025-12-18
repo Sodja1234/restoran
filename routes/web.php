@@ -24,6 +24,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('dishes', DishController::class);
     Route::get('/quotes', [QuoteRequestController::class, 'index'])->name('admin.quotes.index');
+    Route::get('/admin/quotes/{quoteRequest}', [QuoteRequestController::class, 'show'])->name('admin.quotes.show');
     Route::patch('/quotes/{quote}/status', [QuoteRequestController::class, 'updateStatus'])->name('admin.quotes.update-status');
 });
 

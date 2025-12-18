@@ -30,6 +30,11 @@ class QuoteRequestController extends Controller
         $quotes = QuoteRequest::latest()->paginate(10);
         return view('admin.quotes.index', compact('quotes'));
     }
+
+    public function show(QuoteRequest $quoteRequest)
+    {
+        return view('admin.quotes.show', compact('quoteRequest'));
+    }
     public function updateStatus(Request $request, QuoteRequest $quoteRequest)
     {
         $request->validate([
