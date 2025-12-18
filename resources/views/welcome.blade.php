@@ -59,6 +59,31 @@
             </div>
         @endforeach
     </div>
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 mx-auto bg-white rounded-xl shadow-sm border mt-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Demander un Devis Personnalisé</h2>
+
+        @if(session('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <form action="{{ route('quote.store') }}" method="POST">
+            @csrf
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" name="client_name" placeholder="Votre nom complet" class="border-gray-200 rounded-lg p-3 w-full" required>
+                <input type="email" name="client_email" placeholder="Votre email" class="border-gray-200 rounded-lg p-3 w-full" required>
+                <input type="text" name="client_phone" placeholder="Téléphone" class="border-gray-200 rounded-lg p-3 w-full">
+                <input type="date" name="event_date" class="border-gray-200 rounded-lg p-3 w-full" required>
+                <input type="text" name="event_location" placeholder="Lieu de l'événement (Ville, Quartier)" class="border-gray-200 rounded-lg p-3 w-full" required>
+                <input type="number" name="guest_count" placeholder="Nombre d'invités" class="border-gray-200 rounded-lg p-3 w-full" required>
+                <textarea name="details" placeholder="Dites-nous en plus (type d'événement, plats souhaités...)" class="border-gray-200 rounded-lg p-3 w-full md:col-span-2" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="mt-4 w-full py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition">
+                Envoyer ma demande
+            </button>
+        </form>
+    </div>
 
     <script src="https://unpkg.com/preline@1.x/dist/preline.js"></script>
 </body>
